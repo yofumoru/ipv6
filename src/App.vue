@@ -1,17 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <app-header />
+    <div class="content">
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    AppHeader,
+  },
+};
 </script>
 
 <style>
@@ -21,6 +24,19 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+.content {
+  margin-top: 70px; /* Это значение должно соответствовать высоте навигационной панели */
 }
 </style>
